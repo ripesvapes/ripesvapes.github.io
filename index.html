@@ -6,23 +6,10 @@
 <meta name="robots" content="noindex">
 <title>Ripe Vapes</title>
 <script>
-  // Where the printed QR code goes is the one line in target.txt (edit that
-  // file, not this one). It is fetched fresh on every scan, so a change reaches
-  // everyone at once even when the browser kept an old copy of this page
-  // (GitHub Pages lets browsers keep it for 10 minutes).
-  // If target.txt can't be read in time, visitors still land on the site.
-  var FALLBACK = "https://ripesvapes.com/";
-  var done = false;
-  function go(url) {
-    if (done) return;
-    done = true;
-    location.replace(/^https?:\/\//i.test(url) ? url : FALLBACK);
-  }
-  setTimeout(function () { go(FALLBACK); }, 4000);
-  fetch("target.txt?t=" + Date.now(), { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.text() : ""; })
-    .then(function (t) { go(t.trim()); })
-    .catch(function () { go(FALLBACK); });
+  // ↓↓↓ Where the printed QR code goes. Change only the link between the quotes. ↓↓↓
+  var TARGET = "https://ripesvapes.com/";
+  // ↑↑↑ ------------------------------------------------------------------------ ↑↑↑
+  location.replace(TARGET);
 </script>
 <style>
   body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
@@ -32,6 +19,7 @@
 </head>
 <body>
   <noscript>Ripe Vapes — please enable JavaScript.</noscript>
-  <a href="https://ripesvapes.com/">Ripe Vapes</a>
+  <a id="go" href="https://ripesvapes.com/">Ripe Vapes</a>
+  <script>document.getElementById("go").href = TARGET;</script>
 </body>
 </html>
