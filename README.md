@@ -1,19 +1,21 @@
 # Ripe Vapes QR code
 
 The QR code printed on the boxes opens **https://ripesvapes.github.io/**, which
-sends the visitor straight on to the link in `index.html`:
+sends the visitor straight on to the link in `target.txt` (one line, nothing
+else):
 
-```js
-var TARGET = "https://ripesvapes.com/";
+```
+https://ripesvapes.com/
 ```
 
 ## Changing where the QR code goes
 
-1. Open `index.html` here on GitHub and click the pencil (Edit).
-2. Change only the link between the quotes on the `var TARGET = ...` line.
+1. Open `target.txt` here on GitHub and click the pencil (Edit).
+2. Replace the line with the new link (it must start with `https://`).
 3. Click **Commit changes**.
 
-Within a few minutes every printed code goes to the new link — nothing needs to
+About a minute later every printed code goes to the new link, on every phone and
+browser (the page reads `target.txt` fresh on each scan) — nothing needs to
 be reprinted. Do not rename this repository or delete this account: the printed
 codes depend on them.
 
